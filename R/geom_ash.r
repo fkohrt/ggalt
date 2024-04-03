@@ -118,7 +118,7 @@ StatAsh <- ggproto("StatAsh", Stat,
     if (is.null(ab)) ab <- nicerange(data$x)
 
     bin_res <- ash::bin1(data$x, ab, nbin)
-    ash_msg <- capture.output(ash_res <- ash1(bin_res))
+    ash_msg <- capture.output(ash_res <- ash1(bin_res, m = m, kopt = kopt))
 
     if (ash_res$ier == 1) message("Estimate nonzero outside interval ab.")
 
